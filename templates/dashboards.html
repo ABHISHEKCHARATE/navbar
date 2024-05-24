@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboards.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Dashboard!</h1>
+        <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+        <h1>its a dashboard</h1>
+    </header>
+
+    <!-- Your dashboard content here -->
+
+    <form action="{% url 'home' %}" method="get">
+        <button type="submit" class="index-btn">Go to Index</button>
+    </form>
+
+    <!-- Button for Text Summary -->
+    <a href="{% url 'text_summary' %}" class="text-summary-btn">Text to Summary</a><br><br>
+
+
+   
+</body>
+</html>

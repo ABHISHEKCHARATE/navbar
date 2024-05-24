@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/summary.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Summary</h1>
+
+        <!-- Original Input Data -->
+        <div class="block">
+            <h2>Original Input Data</h2>
+            <p>{{ string_data }}</p>
+        </div>
+
+        <!-- Summary of Input Data -->
+        <div class="block">
+            <h2>Summary</h2>
+            <p>{{ summary }}</p>
+        </div>
+    </div>
+</body>
+</html>

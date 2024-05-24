@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summary</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/text_summary.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Summary</h1>
+        <!-- Form section -->
+        <div>
+            <h2>Input</h2>
+            <form id="inputForm" method="POST" enctype="multipart/form-data" action="{% url 'text_summary' %}">
+                {% csrf_token %}
+                <!-- Input type selection -->
+                <label for="inputType">Select input type:</label>
+                <select id="inputType" onchange="toggleInput()" name="inputType">
+                    <option value="pdf">PDF</option>
+                    <option value="text">Text</option>
+                </select><br>
+                <!-- PDF input -->
+                <div id="pdfInput" style="display: none;">
+                    <label for="pdfFile">Upload PDF:</label>
+                    <input type="file" id="pdfFile" name="pdfFile">
+                </div>
+                <!-- Text input -->
+                <div id="textInput" style="display: none;">
+                    <label for="textInput">Enter Text:</label><br>
+                    <textarea id="textInput" name="textInput" rows="4" cols="50"></textarea>
+                </div>
+                <!-- Submit button -->
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <!-- Summary section -->
+        <div id="summarySection" style="display: none;">
+            <h2>Summary</h2>
+            <div id="summary"></div>
+        </div>
+    </div>
+    <!-- Link to external JavaScript file -->
+    <script src="{% static 'javascript/text_summary.js' %}"></script>
+</body>
+</html>
